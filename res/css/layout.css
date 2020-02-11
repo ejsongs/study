@@ -1,0 +1,195 @@
+/* index */
+html,body {height: 100%; width: 100%; }
+header {width: 100%; padding: 35px;  }
+header .logo {float:left;}
+header .icon-menu {float:right;}
+.main {padding-top: 100px; }
+.main .wrap-main {position: relative; }
+.main .wrap-main .text {position: absolute; width: 1000px; top:100px; left:50%; transform: translateX(-50%); right:0; text-align: center; font-size: 50px; z-index: 2; }
+.main .wrap-main .text h2 {display: inline-block;font-size: 0; z-index: 2; transform: translateX(10px);animation: moveText 3s linear infinite }
+.main .wrap-main .text h2:first-child { margin-right: 0px; ;}
+.main .wrap-main .text h2 b {font-size: 50px; letter-spacing: 25px; }
+.main .wrap-main .text h2 b:nth-child(1) {margin-right: 40px;; }
+.main .wrap-main .text h2 b.color-white {color:white;  }
+.main .wrap-main .text h2 b.color-blck {color:black;  }
+.main .circle {width: 550px; height: 550px;  margin: auto;}
+.main .circle img { display: block; }
+.main #rotationCircle {position: relative; z-index: 1; }
+.main .wrap-rotate-img {position: absolute; left:0; right:0; top:0; }
+.roll {
+width: 0%;
+height: 0%; }
+
+
+/* roll animation  */
+.roll img {
+    -webkit-animation-name:             rotate;
+    -webkit-animation-duration: 20s; /* 시간이 얼마나 걸릴 것이냐 */
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: cubic-bezier(1,-0.01,0,1) ;
+    -webkit-animation-delay: 2s;
+}
+.roll:nth-child(1) {
+    -webkit-animation-name:             brightness1;
+    -webkit-animation-duration: 20s; /* 시간이 얼마나 걸릴 것이냐 */
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+    /* -webkit-animation-delay: 3s; */
+}
+.roll:nth-child(2) {
+    -webkit-animation-name:             brightness2;
+    -webkit-animation-duration: 20s; /* 시간이 얼마나 걸릴 것이냐 */
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+    /* -webkit-animation-delay: 3s; */
+
+}
+
+.bottom-text {
+    position: absolute;
+    bottom: 65px;
+    text-align: center;;
+    left:0;
+    right:0;
+    color:#fff;
+    z-index: 2;
+    letter-spacing: 8px;
+    font-size: 18px;
+    animation: twinkleText 12s ease-in-out infinite;
+}
+
+.wave-wrap {
+    font-size: 0px;
+}
+.wave-wrap .waves  use {
+    animation: do-waves  25s ease infinite;
+    animation-delay: -2s;
+    /* animation-duration: 10s; */
+}
+.wave-wrap .waves  use:nth-child(1) {
+    animation-duration: 10s;
+}
+.wave-wrap .waves  use:nth-child(2) {
+    animation-duration: 15s;
+}
+.wave-wrap .waves  use:nth-child(3) {
+    animation-duration: 19s;
+}
+.wave-wrap .waves  use:nth-child(4) {
+    animation-duration: 25s;
+}
+
+@-webkit-keyframes rotate {
+    0% {
+    -webkit-transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(-180deg);
+    }
+    100% {
+    -webkit-transform: rotate(-360deg);
+    }
+
+}
+
+@-webkit-keyframes brightness1 {
+    0% {
+        filter: brightness(1);
+        -webkit-filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(0.3);
+        -webkit-filter: brightness(0.3);
+
+    }
+    100% {
+        filter: brightness(1);
+        -webkit-filter: brightness(1);
+
+    }
+
+}
+
+
+@-webkit-keyframes brightness2 {
+    0% {
+        filter: brightness(0.3);
+        -webkit-filter: brightness(0.3);
+    }
+    50% {
+        filter: brightness(1);
+        -webkit-filter: brightness(1);
+
+    }
+    100% {
+        filter: brightness(0.3);
+        -webkit-filter: brightness(0.3);
+
+    }
+
+}
+
+@-webkit-keyframes moveText {
+    0% {
+        transform: translate(0px);
+    }
+    50% {
+        transform: translate(10px);
+    }
+    100% {
+        transform: translate(0px);
+    }
+}
+
+@-webkit-keyframes twinkleText {
+    0% {
+        /* transform: translate(0px); */
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes do-waves {
+    0% {
+        transform: translateX(-90px) translateY(0) translateZ(0);
+    }
+
+    100% {
+        transform: translateX(85px) translateY(0) translateZ(0);
+    }
+}
+
+
+/* slide */
+section {width: 100%; background: #f15a24; padding: 100px 0; }
+section .content {width: 70%; margin: 0 auto; position: relative;}
+section .content h5 {color:#fff; text-align: right; letter-spacing: 0.6rem; font-size:20px; margin-bottom: 15px; margin-right: -0.6rem;}
+section .content .pagination {}
+section .content .pagination ul {float:right; }
+section .content .pagination ul li {float:left; color:#fff; font-size: 18px; height: 100%;  margin-right:10px; }
+section .content .pagination ul li:last-child {margin-right: 0px;}
+section .content .pagination ul li.now { padding-bottom: 0px; border-bottom: 2px solid #fff; }
+section .content .loader-wrap {position: relative; height: 150px; visibility: hidden; }
+section .content .loader-wrap .base {position: absolute;; top:80px; right:0px; width: 150px; height: 3px; border-radius: 3px; background: rgba(0,0,0,0.1); transform: skewY(-45deg);}
+section .content .loader-wrap .fill {position: absolute;; top:80px; right:0px; width: 0px; height: 3px; border-radius: 3px; transform: skewY(-45deg); background: #Fff; }
+/* section .content .loader progress {transform: skewY(-45deg); position: absolute; right:0; bottom:0;border-radius: 5} */
+/* section .content .loader .line { position: absolute; top:80px;   right:0px; width: 150px; height: 3px; background: red; transform: skewY(-45deg);} */
+
+.show-slide {width: 100%; height: 300px; border: 2px solid #000; overflow: hidden; }
+.slide-wrap {position: relative; width: 100%;height: 300px; }
+.slide-wrap > div {position: absolute; width: 100%; height: 100%;}
+.slide-wrap > div > * {height: 100%; float:left}
+.slide-wrap > div .img {width: 35%; background: #fff; }
+.slide-wrap > div .txt {width: 65%; background: #fdd; }
+.slide-wrap > div:nth-child(1) {left:0px; }
+.slide-wrap > div:nth-child(2) {left:100%; }
+.slide-wrap > div:nth-child(3) {left:200%; }
+.slide-wrap > div:nth-child(4) {left:300%; }
+.slide-wrap > div:nth-child(5) {left:400%; }

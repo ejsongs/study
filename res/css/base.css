@@ -40,3 +40,8 @@ img {border: none; }
 .clear::after {clear: both; content: ""; display: block;}
 .flex-wrap {display: flex;flex-wrap:  wrap; }
 .flex1{display: flex; flex:1; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}

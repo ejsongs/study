@@ -32,5 +32,30 @@ function fillLoader() {
     }, 1000);
 }
 
-function rollingText() {
+//
+function animateLetterOut(cw, i) {
+  setTimeout(function() {
+      cw.toggleClass('hidden');
+  }, i*100);
 }
+//
+function animateLetterIn(cw, i) {
+  setTimeout(function() {
+      cw.toggleClass('hidden');
+  }, i*100);
+}
+
+
+
+function changeWord() {
+    // out
+    for (var i = 0; i < $('.txt-wrap span').not('.hidden').length; i++) {
+        animateLetterOut( $('.txt-wrap span').not('.hidden').eq(i), i);
+    }
+    // in
+    for (var i = 0; i < $('.txt-wrap span.hidden').length; i++) {
+        animateLetterIn( $('.txt-wrap span.hidden').eq(i), i);
+    }
+}
+changeWord();
+setInterval(changeWord, 4000);
